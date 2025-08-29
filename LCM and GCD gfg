@@ -1,0 +1,17 @@
+class Solution {
+    public int[] lcmAndGcd(int A, int B) {
+        int x = A, y = B;
+
+        while (y != 0) {
+            int temp = y;
+            y = x % y;
+            x = temp;
+        }
+        int gcd = x;
+
+
+        int lcm = (A / gcd) * B;
+
+        return new int[]{lcm, gcd};
+    }
+}
