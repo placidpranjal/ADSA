@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] a = new int[n + 1];  
+
+        for (int i = 1; i <= n; i++) {
+            int val = sc.nextInt();
+            a[val] = i;  
+        }
+
+        int m = sc.nextInt();
+        long vasya = 0, petya = 0;
+
+        for (int i = 0; i < m; i++) {
+            int b = sc.nextInt();
+            int pos = a[b];
+            vasya += pos;
+            petya += (n - pos + 1);
+        }
+
+        System.out.println(vasya + " " + petya);
+    }
+}
