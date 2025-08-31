@@ -1,0 +1,22 @@
+import java.util.*;
+class Solution {
+    public boolean findPair(int[] arr, int x) {
+        int n,n2;
+       HashMap<Integer,Integer>map= new HashMap<>(); 
+       for(int i=0;i<arr.length;i++)
+       {
+            n=x+arr[i];
+             n2 = arr[i] - x;
+       
+       if(map.containsKey(n)||map.containsKey(n2))
+       {
+           return true;
+       }
+       else
+       {
+           map.put(arr[i],i);
+       }
+    }
+    return false;
+}
+}
